@@ -10,9 +10,10 @@ return new class extends Migration {
    */
   public function up(): void
   {
-    Schema::create("classrooms", function (Blueprint $table) {
+    Schema::create("subjects", function (Blueprint $table) {
       $table->id();
       $table->string("name");
+      $table->integer("coef");
       $table
         ->foreignId("program_id")
         ->constrained()
@@ -26,6 +27,6 @@ return new class extends Migration {
    */
   public function down(): void
   {
-    Schema::dropIfExists("classrooms");
+    Schema::dropIfExists("subjects");
   }
 };
